@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: test basic user account creation
+      user: name=joriwal comment=cpjoriwal shell=/sbin/nologin
+

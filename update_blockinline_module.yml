@@ -1,0 +1,10 @@
+---
+- hosts: nodes
+  tasks:
+  - name: Updating a line using Ansible blockinfile module
+    blockinfile:
+      dest: /etc/filemodule/writecontent.txt
+      marker: <!-- {mark} Adding IP address -->
+      block: |
+        These lines were updated by blockinfile module
+        Check out the marker lines

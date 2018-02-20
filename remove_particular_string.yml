@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: Ansible remove words example
+    replace:
+      path: "/etc/filemodule/writecontent.txt"
+      regexp: "dog"
+

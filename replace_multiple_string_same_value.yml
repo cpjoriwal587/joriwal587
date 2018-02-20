@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+  - name: Ansible replace multiple words example
+    replace:
+      path: /etc/filemodule/writecontent.txt
+      regexp: "{{ item }}"
+      replace: "dog"
+    with_items:
+    - 'cat'
+    - 'tiger'
+    - 'lion'
+    - 'apple'

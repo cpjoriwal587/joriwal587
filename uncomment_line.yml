@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: Ansible delete file glob
+    replace:
+      path: /etc/filemodule/writecontent.txt
+      regexp: '#BLOCK'
+      replace: 'BLOCK'

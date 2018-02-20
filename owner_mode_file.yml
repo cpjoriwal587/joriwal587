@@ -1,0 +1,9 @@
+---
+- hosts: nodes
+  tasks:
+  - name: Ansible create new file with permissions example.
+    file:
+      path: "/etc/filemodule/owner_mode_file.txt"
+      state: touch
+      mode: 0777
+      owner: amit

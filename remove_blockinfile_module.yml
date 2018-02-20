@@ -1,0 +1,8 @@
+---
+- hosts: nodes
+  tasks:
+  - name: Removing a line using blockinfile
+    blockinfile:
+      dest: /etc/filemodule/writecontent.txt
+      marker: <!-- {mark} Adding IP address -->
+      state: absent

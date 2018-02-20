@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+  - name: Exampel of commenting a line in Ansible.
+    replace:
+      path: /etc/filemodule/writecontent.txt
+      regexp: '(.*BLOCK*)'
+      replace: '#\1'
+
+

@@ -1,0 +1,10 @@
+---
+- hosts: nodes
+  tasks:
+  - name: Ansible create file with content example
+    copy:
+      dest: "/etc/filemodule/writecontent.txt"
+      insertafter: "^dog"
+      content: |
+           hello
+
