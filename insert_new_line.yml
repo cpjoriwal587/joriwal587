@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+    - name: Ansible insert lineinfile example
+      lineinfile:
+        dest: /etc/filemodule/writecontent.txt
+        line: Inserting a line in a file.
+        state: present
+        create: yes

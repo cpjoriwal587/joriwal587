@@ -1,0 +1,11 @@
+---
+- hosts: nodes
+  tasks:
+  - name: Install httpd yum package
+    yum:
+      name: httpd
+      state: latest
+  - name: start service
+    service:
+      name: httpd
+      enabled: yes

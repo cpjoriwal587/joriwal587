@@ -1,0 +1,23 @@
+---
+- hosts: all
+  user: root
+  tasks:
+       - name: vgcreate
+         lvg: 
+               vg: vgdata
+               pvs: /dev/sdb
+       - name: lvcreate
+         lvol:
+               vg: vgdata
+               lv: newlv
+               size: 1500M
+       - name: create file system
+         filesystem:
+               fstype: ext4
+               dev: /dev/vgdata/newlv
+       - name: mount logical volume
+         mount: 
+               name: /mylv
+               src: /dev/vgdata/newlv
+               fstype: ext4
+               state: mounted 

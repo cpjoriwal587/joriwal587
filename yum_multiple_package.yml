@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+  - name: yum
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - git
+    - httpd
+    - mysql
